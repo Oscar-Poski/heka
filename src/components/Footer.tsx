@@ -1,0 +1,147 @@
+import { CircleUser, Github, Linkedin, Mail, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { withBase } from "@/lib/utils";
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="border-t bg-muted/30">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-500">
+                <GraduationCap className="h-5 w-5 text-white" />
+              </div>
+              <span className="font-bold text-xl bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
+                Hekademos IT
+              </span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Aprende IT desde cero y consígue trabajo rápido.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="https://github.com/Oscar-Poski/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/oscar-poski/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+                            <a
+                href="https://oscar-poski.github.io/poski/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <CircleUser className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Product */}
+          <div>
+            <h3 className="font-semibold mb-4">Producto</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={withBase("/#features")}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Características
+                </a>
+              </li>
+              <li>
+                <a
+                  href={withBase("/cursos")}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Cursos
+                </a>
+              </li>
+              <li>
+                <a
+                  href={withBase("/#faq")}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="font-semibold mb-4">Empresa</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={withBase("/about")}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Sobre Nosotros
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="font-semibold mb-4">Mantente al tanto</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Subscríbete a nuestro newsletter.
+            </p>
+            <div className="flex gap-2">
+              <input
+                type="email"
+                placeholder="Ingresa tu email"
+                className="flex h-9 w-full rounded-md border bg-background px-3 py-1 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+              <Button size="sm">
+                <Mail className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Hecho con amor por Hekademos IT. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-6">
+            <a
+              href={withBase("/privacy")}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Política de Privacidad
+            </a>
+            <a
+              href={withBase("/terms")}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Términos de Servicio
+            </a>
+            <a
+              href={withBase("/privacy#cookies")}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Política de Cookies
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
