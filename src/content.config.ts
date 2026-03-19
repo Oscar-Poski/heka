@@ -8,9 +8,6 @@ const lessons = defineCollection({
     moduleSlug: z.string(),
     lessonSlug: z.string(),
     title: z.string(),
-    summary: z.string(),
-    durationMinutes: z.number().int().positive(),
-    objectives: z.array(z.string()),
     order: z.number().int().nonnegative(),
   }),
 });

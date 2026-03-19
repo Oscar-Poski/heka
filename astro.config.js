@@ -3,14 +3,19 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
+const githubOwner = process.env.GITHUB_REPOSITORY_OWNER;
+const site =
+  process.env.SITE_URL ??
+  (githubOwner ? `https://${githubOwner}.github.io` : 'https://example.com');
+
 export default defineConfig({
-  site: 'https://d1exhn3bk6gq22.cloudfront.net',
-  base: '/',
+  site,
+  base: '/heka',
   integrations: [
     react(),
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap()
-  ]
+    sitemap(),
+  ],
 });
