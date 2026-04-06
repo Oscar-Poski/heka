@@ -57,6 +57,12 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </a>
+            <a href={withBase("/blog")}>
+              <Button size="lg" className="group">
+                Blog
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

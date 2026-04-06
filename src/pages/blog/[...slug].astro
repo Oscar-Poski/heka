@@ -1,0 +1,61 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/main.astro';
+import { withBase } from '@/lib/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+const { Content } = await post.render();
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('es-MX', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+---
+
+<Layout title={`${post.data.title} | Blog | Poski`}>
+  <article class="py-16 md:py-24">
+    <div class="container mx-auto max-w-4xl px-4">
+      <a
+        href={withBase('/blog')}
+        class="inline-flex items-center text-sm font-medium text-yellow-700 transition-colors hover:text-yellow-600 dark:text-yellow-300 dark:hover:text-yellow-200"
+      >
+        ← Volver al blog
+      </a>
+
+      <header class="mt-8 rounded-3xl border border-border/70 bg-card/70 p-8 shadow-sm">
+        <div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+          <span>{formatDate(post.data.pubDate)}</span>
+          {post.data.updatedDate && (
+            <span>Actualizado: {formatDate(post.data.updatedDate)}</span>
+          )}
+        </div>
+        <h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl">{post.data.title}</h1>
+        <p class="mt-4 text-lg text-muted-foreground">{post.data.description}</p>
+        {post.data.tags.length > 0 && (
+          <div class="mt-6 flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => (
+              <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </header>
+
+      <div class="markdown-content mt-10 rounded-3xl border border-border/70 bg-card p-8 shadow-sm md:p-10">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Layout>

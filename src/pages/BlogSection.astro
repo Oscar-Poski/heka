@@ -1,0 +1,96 @@
+---
+import { withBase } from '@/lib/utils';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+  title?: string;
+  description?: string;
+  limit?: number;
+  showViewAll?: boolean;
+}
+
+const {
+  posts,
+  title = 'Blog',
+  description = 'Entradas recientes sobre ingeniería, aprendizaje y proyectos personales.',
+  limit,
+  showViewAll = true,
+} = Astro.props;
+
+const visiblePosts = typeof limit === 'number' ? posts.slice(0, limit) : posts;
+
+const formatDate = (date: Date) =>
+  new Intl.DateTimeFormat('es-MX', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  }).format(date);
+---
+
+<section id="blog" class="py-20 md:py-32">
+  <div class="container mx-auto px-4">
+    <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl space-y-3">
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-yellow-600 dark:text-yellow-400">
+          Escritura
+        </p>
+        <h2 class="text-3xl font-bold tracking-tight md:text-5xl">{title}</h2>
+        <p class="text-lg text-muted-foreground">{description}</p>
+      </div>
+      {showViewAll && (
+        <a
+          href={withBase('/blog')}
+          class="inline-flex items-center text-sm font-medium text-yellow-700 transition-colors hover:text-yellow-600 dark:text-yellow-300 dark:hover:text-yellow-200"
+        >
+          Ver todas las entradas
+        </a>
+      )}
+    </div>
+
+    {visiblePosts.length > 0 ? (
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {visiblePosts.map((post) => (
+          <a
+            href={withBase(`/blog/${post.slug}`)}
+            class="group block rounded-3xl border border-border/70 bg-card/70 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-yellow-500/40 hover:shadow-xl"
+          >
+            <div class="mb-4 flex items-center gap-3 text-sm text-muted-foreground">
+              <span>{formatDate(post.data.pubDate)}</span>
+              {post.data.tags.length > 0 && (
+                <>
+                  <span aria-hidden="true">•</span>
+                  <span>{post.data.tags[0]}</span>
+                </>
+              )}
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-2xl font-semibold tracking-tight transition-colors group-hover:text-yellow-700 dark:group-hover:text-yellow-300">
+                {post.data.title}
+              </h3>
+              <p class="line-clamp-3 text-muted-foreground">{post.data.description}</p>
+            </div>
+
+            {post.data.tags.length > 0 && (
+              <div class="mt-6 flex flex-wrap gap-2">
+                {post.data.tags.slice(0, 3).map((tag) => (
+                  <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-3xl border border-dashed border-border bg-card/50 p-10 text-center">
+        <h3 class="text-xl font-semibold">Aún no hay entradas publicadas</h3>
+        <p class="mt-2 text-muted-foreground">
+          Agrega archivos Markdown en <code>src/content/blog</code> para que aparezcan aquí.
+        </p>
+      </div>
+    )}
+  </div>
+</section>

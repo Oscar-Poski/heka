@@ -223,6 +223,22 @@
   font-size: 1.125rem;
 }
 
+.markdown-content p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.8;
+}
+
+.markdown-content a {
+  color: hsl(40 100% 45%);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.markdown-content a:hover {
+  color: hsl(40 100% 40%);
+}
+
 .markdown-content ul,
 .markdown-content ol {
   padding-left: 1.5rem;
@@ -253,6 +269,11 @@
   margin: 1.5rem 0;
   color: hsl(var(--foreground) / 0.8);
   font-style: italic;
+}
+
+.markdown-content hr {
+  margin: 2rem 0;
+  border-color: hsl(var(--border));
 }
 
 .markdown-content pre {

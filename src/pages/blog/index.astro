@@ -1,8 +1,6 @@
 ---
-import Layout from '../layouts/main.astro';
 import { getCollection } from 'astro:content';
-import { Hero } from '@/components/Hero';
-import { Features } from '@/components/Features';
+import Layout from '@/layouts/main.astro';
 import BlogSection from '@/pages/BlogSection.astro';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -10,8 +8,11 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 );
 ---
 
-<Layout>
-	<Hero client:load />
-	<Features client:load />
-	<BlogSection posts={posts} limit={3} />
+<Layout title="Blog | Poski">
+  <BlogSection
+    posts={posts}
+    title="Blog"
+    description="Mi versión del mundo. Aquí comparto mis ideas, mis sueños, mis frustraciones y más."
+    showViewAll={false}
+  />
 </Layout>
