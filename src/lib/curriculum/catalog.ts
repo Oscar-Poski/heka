@@ -113,7 +113,31 @@ export const curriculumCatalog: CatalogTrack[] = [
             summary: '',
           }
         ]
-      }
+      },
+      {
+        slug: 'misc',
+        title: 'Misceláneo',
+        level: 'básico',
+        summary: '',
+        estimatedHours: 0,
+        modules: [
+          {
+            slug: 'lista',
+            title: 'Lista de Palabras',
+            summary: '',
+          },
+          {
+            slug: 'letras',
+            title: 'Alfabeto Griego',
+            summary: '',
+          },
+          {
+            slug: 'conceptos',
+            title: 'Algunos Conceptos',
+            summary: '',
+          },
+        ]
+      },
     ]
   },
   /*{
