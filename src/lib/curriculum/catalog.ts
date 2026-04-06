@@ -42,7 +42,62 @@ export const curriculumCatalog: CatalogTrack[] = [
             slug: 'anaximandro',
             title: 'Anaximandro de Mileto',
             summary: '',
-          }
+          },
+          {
+            slug: 'anaximenes',
+            title: 'Anaxímenes de Mileto',
+            summary: '',
+          },
+          {
+            slug: 'jenofanes',
+            title: 'Jenófanes de Colofón',
+            summary: '',
+          },
+          {
+            slug: 'pitagoras',
+            title: 'Pitágoras de Samos',
+            summary: '',
+          },
+          {
+            slug: 'heraclito',
+            title: 'Heráclito de Éfeso',
+            summary: '',
+          },
+          {
+            slug: 'parmenides',
+            title: 'Parménides de Elea',
+            summary: '',
+          },
+          {
+            slug: 'zenon',
+            title: 'Zenón de Elea',
+            summary: '',
+          },
+          {
+            slug: 'meliso',
+            title: 'Meliso de Samos',
+            summary: '',
+          },
+          {
+            slug: 'atomistas',
+            title: 'Los Atomistas: Leucipo y Demócrito',
+            summary: '',
+          },
+          {
+            slug: 'anaxagoras',
+            title: 'Anaxágoras de Clazómenas',
+            summary: '',
+          },
+          {
+            slug: 'empedocles',
+            title: 'Empédocles de Acragas',
+            summary: '',
+          },
+          {
+            slug: 'sofistas',
+            title: 'Los Sofistas',
+            summary: '',
+          },
         ]
       },
       {
