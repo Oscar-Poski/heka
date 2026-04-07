@@ -108,10 +108,30 @@ export const curriculumCatalog: CatalogTrack[] = [
         estimatedHours: 0,
         modules: [
           {
+            slug: 'aristofanes',
+            title: 'Según Aristófanes',
+            summary: '',
+          },
+          {
+            slug: 'jenofonte',
+            title: 'Según Jenofónte',
+            summary: '',
+          },
+          {
             slug: 'apologia',
             title: 'Apología',
             summary: '',
-          }
+          },
+          {
+            slug: 'criton',
+            title: 'Critón',
+            summary: '',
+          },
+          {
+            slug: 'eutifron',
+            title: 'Eutifrón',
+            summary: '',
+          },
         ]
       },
       {
