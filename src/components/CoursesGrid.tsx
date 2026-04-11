@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Network, Terminal, MonitorSmartphone } from 'lucide-react';
+import { ArrowRight, BookOpen, MessageCircleQuestion, 
+  Droplet, Grid2x2Check, Sun } from 'lucide-react';
 import { withBase } from '@/lib/utils';
 import type { LearningTrack } from '@/lib/curriculum/types';
 
@@ -7,10 +8,11 @@ type CoursesGridProps = {
   learningTracks: LearningTrack[];
 };
 
-const iconMap: Record<string, typeof Terminal> = {
-  'linux-practico': Terminal,
-  'redes-desde-cero': Network,
-  'frontend-moderno': MonitorSmartphone,
+const iconMap: Record<string, typeof Droplet> = {
+  'presocraticos': Droplet,
+  'socrates': MessageCircleQuestion,
+  'platon': Sun,
+  'aristoteles': Grid2x2Check,
 };
 
 const container = {
@@ -35,7 +37,7 @@ export function CoursesGrid({ learningTracks }: CoursesGridProps) {
         <section key={track.slug} className="rounded-2xl border bg-card p-6 md:p-8">
           <div className="mb-6 flex items-start justify-between gap-3">
             <div>
-              <p className="text-sm uppercase tracking-wide text-muted-foreground">Path</p>
+              <p className="text-sm uppercase tracking-wide text-muted-foreground">Tema</p>
               <h2 className="mt-1 text-2xl font-semibold md:text-3xl">{track.title}</h2>
               <p className="mt-2 max-w-3xl text-muted-foreground">{track.summary}</p>
             </div>

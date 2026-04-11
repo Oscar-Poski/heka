@@ -237,7 +237,12 @@ export const curriculumCatalog: CatalogTrack[] = [
           },
           {
             slug: 'analiticos',
-            title: 'Analíticos Primeros',
+            title: 'Analíticos Primeros Libro I',
+            summary: '',
+          },
+          {
+            slug: 'analiticos-ii',
+            title: 'Analíticos Primeros Libro II',
             summary: '',
           },
         ]
@@ -268,25 +273,30 @@ export const curriculumCatalog: CatalogTrack[] = [
       },
     ]
   },
-  /*{
-    slug: 'desarrollo-web',
-    title: 'Desarrollo Web',
-    summary: 'Ruta orientada a construir productos web modernos y desplegables.',
+  {
+    slug: 'literatura',
+    title: 'Notas de Libros',
+    summary: 'Notas que quiero conservar sobre algunoss libros.',
     courses: [
       {
-        slug: 'frontend-moderno',
-        title: 'En Construcción: Frontend Moderno',
+        slug: 'novelas',
+        title: 'Categoría: Novelas',
         level: 'básico',
-        summary: 'HTML semántico, CSS utilitario y componentes reutilizables.',
+        summary: 'Notas sobre algunas novelas.',
         estimatedHours: 0,
         modules: [
           {
-            slug: 'fundamentos-ui',
-            title: 'Fundamentos de UI',
-            summary: 'Bases para interfaces claras, accesibles y mantenibles.',
-          }
+            slug: 'kundera-levedad',
+            title: 'La Insoportable Levedad del Ser',
+            summary: 'Milan Kundera',
+          },
+          {
+            slug: 'marquez-colera',
+            title: 'El Amor en los Tiempos del Cólera',
+            summary: 'Gabriel García Márquez',
+          },
         ]
       }
     ]
-  }*/
+  }
 ];

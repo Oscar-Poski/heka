@@ -43,9 +43,6 @@ async function loadLessonEntries(): Promise<LessonEntry[]> {
     lesson: {
       slug: entry.data.lessonSlug,
       title: entry.data.title,
-      summary: entry.data.summary,
-      durationMinutes: entry.data.durationMinutes,
-      objectives: entry.data.objectives,
       contentHtml: markdown.parse(entry.body) as string,
     },
   }));

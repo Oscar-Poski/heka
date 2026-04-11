@@ -1,9 +1,6 @@
 export type Lesson = {
   slug: string;
   title: string;
-  summary: string;
-  durationMinutes: number;
-  objectives: string[];
   contentHtml: string;
 };
 
