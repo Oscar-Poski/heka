@@ -250,6 +250,11 @@ export const curriculumCatalog: CatalogTrack[] = [
             title: 'Analíticos Segundos Libro I',
             summary: '',
           },
+          {
+            slug: 'topicos',
+            title: 'Tópicos',
+            summary: '',
+          },
         ]
       },
       {
@@ -279,9 +284,51 @@ export const curriculumCatalog: CatalogTrack[] = [
     ]
   },
   {
+    slug: 'dios',
+    title: 'Sobre Dios',
+    summary: '',
+    courses: [
+      {
+        slug: 'mitos',
+        title: 'Mitologías de la Antigüedad',
+        level: 'básico',
+        summary: 'Notas sobre algunas mitologías del mundo antigüo.',
+        estimatedHours: 0,
+        modules: [
+          {
+            slug: 'mesopotamia',
+            title: 'Mesopotamia',
+            summary: '',
+          },
+          {
+            slug: 'egipto',
+            title: 'Egipto',
+            summary: '',
+          },
+        ]
+      },
+      {
+        slug: 'iluminados',
+        title: 'Humanos Iluminados',
+        level: 'básico',
+        summary: 'Notas sobre algunos personajes tradicionales.',
+        estimatedHours: 0,
+        modules: []
+      },
+      {
+        slug: 'tradiciones',
+        title: 'Tradiciones',
+        level: 'básico',
+        summary: 'Notas sobre algunas tradiciones, filosofías y doctrinas para llegar a Dios.',
+        estimatedHours: 0,
+        modules: []
+      },
+    ]
+  },
+  {
     slug: 'literatura',
     title: 'Notas de Libros',
-    summary: 'Notas que quiero conservar sobre algunoss libros.',
+    summary: 'Notas que quiero conservar sobre algunos libros.',
     courses: [
       {
         slug: 'novelas',
