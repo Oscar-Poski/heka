@@ -3,7 +3,7 @@ trackSlug: filosofia
 courseSlug: aristoteles
 moduleSlug: topicos
 lessonSlug: 02-topicos
-title: Libro II
+title: Libro II (Accidente)
 order: 2
 ---
 Ofrece un catálogo de lugares argumentativos (topoi) relacionados con el **accidente**. Es decir, estrategias concretas para atacar o defender proposiciones del tipo *"X pertenece a Y como accidente"*.

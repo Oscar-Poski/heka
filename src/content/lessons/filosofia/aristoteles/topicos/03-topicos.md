@@ -3,7 +3,7 @@ trackSlug: filosofia
 courseSlug: aristoteles
 moduleSlug: topicos
 lessonSlug: 03-topicos
-title: Libro III
+title: Libro III (Accidente - Juicios Comparativos)
 order: 3
 ---
 Se especializa en un tipo particular de argumentación accidental — los **juicios comparativos**. *"¿Cuál de dos cosas es más X que la otra?"* o *"¿cuál es preferible?"*

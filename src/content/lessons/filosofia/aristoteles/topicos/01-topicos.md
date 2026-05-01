@@ -3,7 +3,7 @@ trackSlug: filosofia
 courseSlug: aristoteles
 moduleSlug: topicos
 lessonSlug: 01-topicos
-title: Libro I
+title: Libro I (Dialéctica y 4 Predicables)
 order: 1
 ---
 Aristóteles establece qué es la **dialéctica**, para qué sirve, y las herramientas conceptuales que usará en los libros siguientes.
